@@ -18,6 +18,11 @@ function App() {
           Learn React
         </a>
       </header>
+      <body>
+        <h1>
+          Hello This is the text from Noor
+        </h1>
+      </body>
     </div>
   );
 }
