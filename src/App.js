@@ -1,30 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import './App.css'; // You can style the component in a separate CSS file
 
-function App() {
+const NavBar = () => {
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  const toggleDropdown = () => {
+    setShowDropdown(!showDropdown);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-      <body>
-        <h1>
-          Hello This is the text from Noor
-        </h1>
-      </body>
-    </div>
+    <nav className="navbar">
+      <ul className="nav-list">
+        <li className="nav-item">Home</li>
+        <li className="nav-item">About</li>
+        <li className="nav-item">Services</li>
+        <li className="nav-item" onMouseEnter={toggleDropdown} onMouseLeave={toggleDropdown}>
+          <span>Dropdown</span>
+          {showDropdown && (
+            <ul className="dropdown">
+              <li className="dropdown-item">Option 1</li>
+              <li className="dropdown-item">Option 2</li>
+              <li className="dropdown-item">Option 3</li>
+            </ul>
+          )}
+        </li>
+        <li className="nav-item">Contact</li>
+      </ul>
+    </nav>
   );
-}
+};
 
-export default App;
+export default NavBar;
