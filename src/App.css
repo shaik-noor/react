@@ -1,35 +1,26 @@
-
-/* ...other styles... */
-
-@media screen and (max-width: 768px) {
-  .mobile-menu-icon {
-    display: flex;
-  }
-  
-  .nav-list {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    position: absolute;
-    background-color: #333;
-    top: 60px; /* Adjust this value as needed */
-    left: 0;
-    opacity: 0.95;
-    z-index: 1;
-    transition: 0.3s;
-  }
-  
-  .mobile-menu-active .nav-list {
-    display: flex;
-  }
+.copy-button {
+  position: relative;
+  text-align: right;
+  margin-bottom: 10px;
 }
 
-
-.dropdown-item {
-  padding: 10px 20px;
+.copy-icon {
   cursor: pointer;
 }
 
-.nav-item:hover .dropdown {
-  display: block;
+.copy-success {
+  position: absolute;
+  top: -5px;
+  right: 0;
+  background-color: #4caf50;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.copy-button:hover .copy-success {
+  opacity: 1;
 }
